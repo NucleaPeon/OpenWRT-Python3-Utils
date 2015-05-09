@@ -16,7 +16,7 @@ PKG_MAINTAINER:=Daniel Kettle <daniel.kettle@angrycoders.com>
 
 PKG_SOURCE:=tornado-$(PKG_VERSION).tar.gz
 PKG_SOURCE_URL:=https://pypi.python.org/packages/source/t/tornado/
-PKG_MD5SUM:=50a6ebada59391e8d01b2bd2ec52f05b
+PKG_MD5SUM:=a06ea343375f2247344257ef691641f9
 PKG_BUILD_DIR:=$(BUILD_DIR)/tornado-$(PKG_VERSION)
 
 include $(INCLUDE_DIR)/package.mk
