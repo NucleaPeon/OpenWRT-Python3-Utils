@@ -1,5 +1,9 @@
-# OpenWRT-Python3.4-Tornado
-Python 3.4 Tornado 4.1 Makefile for OpenWRT
+# OpenWRT-Python3-Utils
+
+ * Python 3.4 Tornado 4.1 Makefile for OpenWRT
+ * Paramiko
+ * setuptools
+ * pip3.4
 
 ## Dependencies:
 
