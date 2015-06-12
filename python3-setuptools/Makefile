@@ -20,7 +20,7 @@ PKG_BUILD_DIR:=$(BUILD_DIR)/setuptools-$(PKG_VERSION)
 include $(INCLUDE_DIR)/package.mk
 $(call include_mk, python3-package.mk)
 
-define Package/python-setuptools
+define Package/python3-setuptools
   SUBMENU:=Python
   SECTION:=lang
   CATEGORY:=Languages
