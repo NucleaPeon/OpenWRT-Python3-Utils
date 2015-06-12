@@ -33,24 +33,32 @@ define Package/python3-setuptools/description
   Easily download, build, install, upgrade, and uninstall Python packages
 endef
 
-define Build/Compile
-	$(call Build/Compile/PyMod,,\
-		install --prefix="$(PKG_INSTALL_DIR)/usr" \
-	)
+define Host/Compile
+	$(call Build/Compile/Py3Mod,,install --prefix=/usr --root=$(PKG_INSTALL_DIR))
 endef
 
-define Build/InstallDev
-	mkdir -p $(PKG_INSTALL_DIR)$(PYTHON3_PKG_DIR)
-	$(ECHO) $(PYTHON3_PKG_DIR)
+define Host/Install
+	$(INSTALL_DIR) $(STAGING_DIR)$(PYTHON3_PKG_DIR)
 	$(CP) \
 		$(PKG_INSTALL_DIR)$(PYTHON3_PKG_DIR)/* \
-		$(PYTHON3_LIB_DIR)
+		$(STAGING_DIR)$(PYTHON3_PKG_DIR)
 endef
 
-define PyPackage/python3-setuptools/install
+define Build/Compile
+	$(call Build/Compile/Py3Mod,,install --prefix=/usr --root=$(PKG_INSTALL_DIR))
+endef
+
+define Package/python3-setuptools/install
+	$(INSTALL_DIR) $(1)$(PYTHON3_PKG_DIR)
+	$(CP) \
+		$(PKG_INSTALL_DIR)$(PYTHON3_PKG_DIR)/* \
+		$(1)$(PYTHON3_PKG_DIR)/
 	$(INSTALL_DIR) $(1)/usr/bin
-	$(CP) $(PKG_INSTALL_DIR)/usr/bin/* $(1)/usr/bin/
+	$(INSTALL_BIN) \
+		$(PKG_INSTALL_DIR)/usr/bin/easy_install \
+		$(1)/usr/bin/
+	$(SED) '1s/#\!.*/#\!\/usr\/bin\/python3/' $(1)/usr/bin/easy_install
 endef
 
-$(eval $(call PyPackage,python3-setuptools))
+$(eval $(call HostBuild))
 $(eval $(call BuildPackage,python3-setuptools))
