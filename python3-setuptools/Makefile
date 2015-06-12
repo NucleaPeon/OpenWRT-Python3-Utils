@@ -34,14 +34,12 @@ define Package/python3-setuptools/description
 endef
 
 define Build/Compile
-	$(ECHO) ":: Build Compile"
 	$(call Build/Compile/PyMod,,\
 		install --prefix="$(PKG_INSTALL_DIR)/usr" \
 	)
 endef
 
 define Build/InstallDev
-	$(ECHO) ":: InstallDev"
 	mkdir -p $(PKG_INSTALL_DIR)$(PYTHON3_PKG_DIR)
 	$(ECHO) $(PYTHON3_PKG_DIR)
 	$(CP) \
@@ -50,7 +48,6 @@ define Build/InstallDev
 endef
 
 define PyPackage/python3-setuptools/install
-	$(ECHO) ":: Install"
 	$(INSTALL_DIR) $(1)/usr/bin
 	$(CP) $(PKG_INSTALL_DIR)/usr/bin/* $(1)/usr/bin/
 endef
