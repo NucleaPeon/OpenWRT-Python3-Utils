@@ -88,6 +88,6 @@ define PyPackage/python3-pip/install
 endef
 
 $(eval $(call HostBuild))
-$(eval $(call PyPackage,python3-pip))
+$(eval $(call Py3Package,python3-pip))
 $(eval $(call BuildPackage,python3-pip))
 
