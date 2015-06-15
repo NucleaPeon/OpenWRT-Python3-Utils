@@ -50,9 +50,9 @@ define Build/Compile
 	$(call Build/Compile/Py3Mod,,install --prefix=/usr --root=$(PKG_INSTALL_DIR))
 endef
 
-PYTHON3_PIP_PKG_DIR:=$(PYTHON_PKG_DIR)/pip-$(PKG_VERSION)-py$(PYTHON_VERSION).egg/pip
+PYTHON3_PIP_PKG_DIR:=$(PYTHON3_PKG_DIR)/pip-$(PKG_VERSION)-py$(PYTHON_VERSION).egg/pip
 define PyPackage/python3-pip/filespec
-+|$(PYTHON_PKG_DIR)
++|$(PYTHON3_PKG_DIR)
 -|$(PYTHON3_PIP_PKG_DIR)/_vendor/distlib/*.exe
 endef
 
@@ -61,7 +61,7 @@ endef
 # since python-pip replaces python-setuptools (when installed)
 define Package/python3-pip/preinst
 #!/bin/sh
-cd "$${IPKG_INSTROOT}$(PYTHON_PKG_DIR)"
+cd "$${IPKG_INSTROOT}$(PYTHON3_PKG_DIR)"
 mv -f easy-install.pth easy-install.pth.old
 mv -f site.py site.py.old
 exit 0
@@ -70,7 +70,7 @@ endef
 # And put them back on remove
 define Package/python3-pip/postrm
 #!/bin/sh
-cd "$${IPKG_INSTROOT}$(PYTHON_PKG_DIR)"
+cd "$${IPKG_INSTROOT}$(PYTHON3_PKG_DIR)"
 mv -f easy-install.pth.old easy-install.pth
 mv -f site.py.old site.py
 exit 0
