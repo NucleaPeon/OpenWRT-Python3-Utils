@@ -4,6 +4,8 @@
  * Paramiko
  * setuptools
  * pip3.4
+ * pycrypto
+ * ECDSA
 
 ## Dependencies:
 
