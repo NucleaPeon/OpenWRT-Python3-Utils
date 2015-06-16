@@ -23,7 +23,7 @@ define Package/python3-pycrypto
   SUBMENU:=Python
   SECTION:=lang
   CATEGORY:=Languages
-  TITLE:=ECDSA cryptographic signature library (pure python)
+  TITLE:=Cryptographic modules for Python.
   DEPENDS:=+python3
 endef
 
