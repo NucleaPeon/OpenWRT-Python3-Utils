@@ -1,15 +1,18 @@
 # OpenWRT-Python3-Utils
 
- * Python 3.4 Tornado 4.1 Makefile for OpenWRT
- * Paramiko
- * setuptools
- * pip3.4
+ * **python3.4 (installable via openwrt's package repo)**
+ * paramiko (not started)
+ * **setuptools (installable)**
+ * **pip3.4 (installable)**
+ * pycrypto (not started)
+ * ecdsa (not started)
 
 ## Dependencies:
 
 * libcurl
 * python3
 * libc  (required for python3.4 because it contains the definiton for posix_fallocate64)
+* ca-certificates
 
 ## How to Install:
 
