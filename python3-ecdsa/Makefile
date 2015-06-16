@@ -65,10 +65,7 @@ define Package/python3-ecdsa/install
 	$(CP) \
 		$(PKG_INSTALL_DIR)$(PYTHON3_PKG_DIR)/* \
 		$(1)$(PYTHON3_PKG_DIR)/
-	$(INSTALL_DIR) $(1)/usr/bin
-	$(INSTALL_BIN) \
-		$(PKG_INSTALL_DIR)/usr/bin/easy_install \
-		$(1)/usr/bin/
+	$(CP) $(PKG_INSTALL_DIR)/* $(1)/
 endef
 
 $(eval $(call HostBuild))
