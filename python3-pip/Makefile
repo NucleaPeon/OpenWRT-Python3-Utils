@@ -37,10 +37,7 @@ define Package/python3-pip/description
 endef
 
 define Build/Compile
-	echo 'Build/Compile'
-	$(call Build/Compile/Py3Mod,,\
-		install --prefix="$(PKG_INSTALL_DIR)/usr" \
-	)
+	$(call Build/Compile/Py3Mod,,install --prefix=/usr --root=$(PKG_INSTALL_DIR))
 endef
 
 PYTHON3_PIP_PKG_DIR:=$(PYTHON3_PKG_DIR)/pip-$(PKG_VERSION)-py$(PYTHON_VERSION).egg/pip
@@ -55,7 +52,7 @@ endef
 define Package/python3-pip/preinst
 #!/bin/sh
 cd "$${IPKG_INSTROOT}$(PYTHON3_PKG_DIR)"
-mv -f easy-install.py easy-install.py.old
+mv -f easy_install.py easy_install.py.old
 mv -f site.py site.py.old
 exit 0
 endef
@@ -64,19 +61,18 @@ endef
 define Package/python3-pip/postrm
 #!/bin/sh
 cd "$${IPKG_INSTROOT}$(PYTHON3_PKG_DIR)"
-mv -f easy-install.py.old easy-install.py
+mv -f easy_install.py.old easy_install.py
 mv -f site.py.old site.py
 exit 0
 endef
 
 define Package/python3-pip/install
-	echo 'python3-pip install'
 	$(INSTALL_DIR) $(1)$(PYTHON3_PKG_DIR)
 	$(INSTALL_DIR) $(1)/usr/bin
 	#$(INSTALL_DIR) $(PKG_INSTALL_DIR)
-	echo 'echoing variables'
-	echo $(PYTHON3_PKG_DIR) # /usr/lib/python3.4/site-packages/
-	echo $(PKG_INSTALL_DIR) # /opt/OpenWRT/build_dir/target-i386_i486_uClibc-0.9.33.2/pip-7.0.3/ipkg-install
+	#echo 'echoing variables'
+	#echo $(PYTHON3_PKG_DIR) # /usr/lib/python3.4/site-packages/
+	#echo $(PKG_INSTALL_DIR) # /opt/OpenWRT/build_dir/target-i386_i486_uClibc-0.9.33.2/pip-7.0.3/ipkg-install
 	$(CP) \
 		$(PKG_INSTALL_DIR)/usr/bin/* $(1)/usr/bin
 endef
