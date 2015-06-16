@@ -2,9 +2,10 @@
 
  * **python3.4 (installable via openwrt's package repo)**
  * paramiko (not started)
+ * python-gssapi >=0.6.1 (optional depedency for paramiko, not started)
  * **setuptools (installable)**
  * **pip3.4 (installable)**
- * pycrypto (not started)
+ * **pycrypto (installable)**
  * ecdsa (not started)
 
 ## Dependencies:
