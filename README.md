@@ -1,9 +1,9 @@
 # OpenWRT-Python3-Utils
 
- * python3.4 (installable via openwrt's package repo)
+ * **python3.4 (installable via openwrt's package repo)**
  * paramiko (not started)
- * setuptools (installable)
- * pip3.4 (installable)
+ * **setuptools (installable)**
+ * **pip3.4 (installable)**
  * pycrypto (not started)
  * ecdsa (not started)
 
