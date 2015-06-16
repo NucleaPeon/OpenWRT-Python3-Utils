@@ -24,7 +24,7 @@ define Package/python3-pycrypto
   SECTION:=lang
   CATEGORY:=Languages
   TITLE:=Cryptographic modules for Python.
-  DEPENDS:=+python3
+  DEPENDS:=+python3 +libgmp
 endef
 
 define Package/python3-pycrypto/description
