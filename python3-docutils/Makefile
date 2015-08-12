@@ -7,34 +7,31 @@
 
 include $(TOPDIR)/rules.mk
 
-PKG_NAME:=python3-passlib
-PKG_VERSION:=1.6.5
+PKG_NAME:=python3-docutils
+PKG_VERSION:=0.12
 PKG_RELEASE:=1
-PKG_SOURCE:=passlib-$(PKG_VERSION).tar.gz
-PKG_SOURCE_URL:=https://pypi.python.org/packages/source/p/passlib/
-PKG_MD5SUM:=d2edd6c42cde136a538b48d90a06ad67
+PKG_SOURCE:=docutils-$(PKG_VERSION).tar.gz
+PKG_SOURCE_URL:=https://pypi.python.org/packages/source/d/docutils/
+PKG_MD5SUM:=4622263b62c5c771c03502afa3157768
 
-PKG_BUILD_DIR:=$(BUILD_DIR)/passlib-$(PKG_VERSION)
+PKG_BUILD_DIR:=$(BUILD_DIR)/docutils-$(PKG_VERSION)
 
 include $(INCLUDE_DIR)/package.mk
 $(call include_mk, python3-package.mk)
 
-define Package/python3-passlib
+define Package/python3-docutils
   SUBMENU:=Python
   SECTION:=lang
   CATEGORY:=Languages
-  TITLE:=Password Hashing Library
+  TITLE:=Python Documentation Utilities
   DEPENDS:=+python3 +python3-pip
 endef
 
-define Package/python3-passlib/description
-	Passlib is a password hashing library for Python 2 & 3,
-	which provides cross-platform implementations of over
-	30 password hashing algorithms, as well as a framework
-	for managing existing password hashes. It’s designed to
-	be useful for a wide range of tasks, from verifying a
-	hash found in /etc/shadow, to providing full-strength
-	password hashing for multi-user application.
+define Package/python3-docutils/description
+	Docutils is a modular system for processing documentation
+	into useful formats, such as HTML, XML, and LaTeX. For
+	input Docutils supports reStructuredText, an easy-to-read,
+	what-you-see-is-what-you-get plaintext markup syntax.
 endef
 
 define Host/Compile
@@ -52,7 +49,7 @@ define Build/Compile
 	$(call Build/Compile/Py3Mod,,install --prefix=/usr --root=$(PKG_INSTALL_DIR))
 endef
 
-define Package/python3-passlib/install
+define Package/python3-docutils/install
 	$(INSTALL_DIR) $(1)$(PYTHON3_PKG_DIR)
 	$(CP) \
 		$(PKG_INSTALL_DIR)$(PYTHON3_PKG_DIR)/* \
@@ -61,4 +58,4 @@ define Package/python3-passlib/install
 endef
 
 $(eval $(call HostBuild))
-$(eval $(call BuildPackage,python3-passlib))
+$(eval $(call BuildPackage,python3-docutils))
