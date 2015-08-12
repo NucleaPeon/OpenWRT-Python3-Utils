@@ -18,7 +18,7 @@
  * [X] docutils
  * [X] click
  * [X] networkx
- * [ ] PyYAML
+ * [X] PyYAML
  * [ ] SQLAlchemy >= 0.9
  * [ ] zope.sqlalchemy >= 0.7
  * [ ] jinja2 >= 2.7
