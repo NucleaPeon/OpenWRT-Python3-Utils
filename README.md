@@ -14,7 +14,7 @@
  * [ ] pyramid_rpc
  * [ ] waitress
  * [ ] sqlalchemy_utils
- * [ ] passlib
+ * [X] passlib
  * [ ] docutils
  * [ ] click
  * [ ] networkx
