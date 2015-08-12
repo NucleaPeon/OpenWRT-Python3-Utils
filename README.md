@@ -1,12 +1,12 @@
 # OpenWRT-Python3-Utils
 
  * **python3.4 (installable via openwrt's package repo)**
- * paramiko (not started)
+ * **paramiko**
  * python-gssapi >=0.6.1 (optional depedency for paramiko, not started)
  * **setuptools (installable)**
  * **pip3.4 (installable)**
  * **pycrypto (installable)**
- * ecdsa (not started)
+ * **ecdsa**
 
 ## Dependencies:
 
