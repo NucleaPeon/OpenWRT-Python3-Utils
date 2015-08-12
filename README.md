@@ -12,7 +12,7 @@
  * [ ] pyramid-debugtoolbar
  * [ ] pyramid_tm
  * [ ] pyramid_rpc
- * [ ] waitress
+ * [X] waitress
  * [ ] sqlalchemy_utils
  * [X] passlib
  * [X] docutils

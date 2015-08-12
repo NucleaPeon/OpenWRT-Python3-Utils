@@ -23,7 +23,7 @@ define Package/python3-networkx
   SUBMENU:=Python
   SECTION:=lang
   CATEGORY:=Languages
-  TITLE:=Package for creation, manipulation, and study of networks.
+  TITLE:=Create, manipulate, and study networks.
   DEPENDS:=+python3 +python3-pip
 endef
 
