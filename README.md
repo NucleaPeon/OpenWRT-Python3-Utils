@@ -15,14 +15,16 @@
  * [ ] waitress
  * [ ] sqlalchemy_utils
  * [X] passlib
- * [ ] docutils
- * [ ] click
- * [ ] networkx
+ * [X] docutils
+ * [X] click
+ * [X] networkx
  * [ ] PyYAML
  * [ ] SQLAlchemy >= 0.9
  * [ ] zope.sqlalchemy >= 0.7
  * [ ] jinja2 >= 2.7
  * [ ] libsass >= 0.4
+
+TODO: Double check all licenses to make sure no copy/paste errors
 
 ## Dependencies:
 
