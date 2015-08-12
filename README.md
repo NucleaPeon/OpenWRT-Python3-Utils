@@ -26,24 +26,18 @@
 
 TODO: Double check all licenses to make sure no copy/paste errors
 
-## Dependencies:
-
-* libcurl
-* python3
-* libc  (required for python3.4 because it contains the definiton for posix_fallocate64)
-* ca-certificates
-
 ## How to Install:
 
-1. Add to your `openwrt/feeds.conf.default` file: `src-git py3utils https://github.com/NucleaPeon/OpenWRT-Python3.4-Tornado.git`
-2. Update your feeds: `./scripts/feeds update -a` (or `./scripts/feeds update tornado`)
+1. Add to your `openwrt/feeds.conf.default` file:
+   `src-git py3utils https://github.com/NucleaPeon/OpenWRT-Python3.4-Tornado.git`
+2. Update your feeds: `./scripts/feeds update -a` (or `./scripts/feeds update py3utils`)
 3. Install packages from your feeds (I've found this way works, but isn't necessarily recommended): `./scripts/feeds install -a`
 
 ### Install on Image:
 4. Run `make menuconfig`
 5. Enter `Languages --> Python -->` and select desired packages with the built in property `[*]`
 
-or
+**or**
 
 ### Install via Modules/Packages
 5. Enter `Languages --> Python -->` and select desired packages with the modular property `[M]`
