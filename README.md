@@ -1,5 +1,10 @@
 # OpenWRT-Python3-Utils
 
+**NOTE** the python3-pip package will not install if you do not have setuptools on your host machine; this is an error on my part, setuptools requires a host build/compile/install phase so it inserts setuptools into the build_root without polluting the computer environment.
+
+
+Package List in this Repository:
+
  * [X] csscompressor
  * [X] ecdsa
  * [ ] libsass (some c++ compilation issues with std::round atm)
