@@ -39,11 +39,22 @@ TODO: Double check all licenses to make sure no copy/paste errors
 3. Install packages from your feeds (I've found this way works, but isn't necessarily recommended): `./scripts/feeds install -a`
 
 ### Install on Image:
-4. Run `make menuconfig`
-5. Enter `Languages --> Python -->` and select desired packages with the built in property `[*]`
+* Run `make menuconfig`
+* Enter `Languages --> Python -->` and select desired packages with the built in property `[*]`
 
 **or**
 
 ### Install via Modules/Packages
-5. Enter `Languages --> Python -->` and select desired packages with the modular property `[M]`
+*. Enter `Languages --> Python -->` and select desired packages with the modular property `[M]`
 
+
+## Host Dependencies:
+
+Attempting to install the python3-pycrytpo resulted in an error:
+
+    In file included from /usr/include/stdio.h:27:0,
+                 from src/_fastmath.c:29:
+    /usr/include/features.h:398:23: fatal error: gnu/stubs.h: No such file or directory
+    #include <gnu/stubs.h>
+
+This **may** be an issue with the package not bringing in the correct host build dependencies, but one solution I found was to install the `gcc-4.8-multilib` and `g++-4.8-multilib` packages. Compilation resumes as usual.
