@@ -7,13 +7,13 @@
 
 include $(TOPDIR)/rules.mk
 
-PKG_NAME:=python3-spartacus
+PKG_NAME:=spartacus
 PKG_VERSION:=0.9
 PKG_RELEASE:=1
-PKG_SOURCE_URL:=https://subversion.assembla.com/svn/teletics.spartacus/trunk/dist/
+PKG_SOURCE_URL:=https://www.assembla.com/spaces/teletics/subversion-3/source/HEAD/trunk/dist/$(PKG_NAME)-$(PKG_VERSION).tar.gz
 PKG_MD5SUM:=831e948c7e19ac0a3a8d1c90f28ee50d
 
-PKG_BUILD_DIR:=$(BUILD_DIR)/spartacus-$(PKG_VERSION)
+PKG_BUILD_DIR:=$(BUILD_DIR)/$(PKG_NAME)-$(PKG_VERSION)
 
 include $(INCLUDE_DIR)/package.mk
 $(call include_mk, python3-package.mk)
@@ -22,7 +22,7 @@ define Package/python3-spartacus
   SUBMENU:=Python
   SECTION:=lang
   CATEGORY:=Languages
-  TITLE:=SSH2 protocol library
+  TITLE:=Python-side Rapid Application Development Toolkit
   DEPENDS:=+python3-paramiko +python3-pip +python3-tornado +libcurl +openssh-server +openssh-client +openssh-client-utils +openssh-keygen +openssh-sftp-server +openssh-sftp-client +sshtunnel +libssh2
 endef
 
