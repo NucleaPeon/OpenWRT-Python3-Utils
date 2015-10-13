@@ -23,7 +23,7 @@ define Package/python3-spartacus
   SECTION:=lang
   CATEGORY:=Languages
   TITLE:=SSH2 protocol library
-  DEPENDS:=+python3-paramiko +python3-pip +python3-tornado +liburl +openssh-server +openssh-client +openssh-client-utils +openssh-keygen +openssh-sftp-server +openssh-sftp-client +sshtunnel +libssh2
+  DEPENDS:=+python3-paramiko +python3-pip +python3-tornado +libcurl +openssh-server +openssh-client +openssh-client-utils +openssh-keygen +openssh-sftp-server +openssh-sftp-client +sshtunnel +libssh2
 endef
 
 define Package/python3-spartacus/description
