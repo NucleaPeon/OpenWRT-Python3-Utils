@@ -8,12 +8,11 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=python3-paramiko
-PKG_VERSION:=1.15.2
+PKG_VERSION:=1.15.3
 PKG_RELEASE:=1
 PKG_SOURCE:=paramiko-$(PKG_VERSION).tar.gz
 PKG_SOURCE_URL:=https://pypi.python.org/packages/source/p/paramiko/
-PKG_MD5SUM:=6bbfb328fe816c3d3652ba6528cc8b4c
-
+PKG_MD5SUM:=c959088669f8d951585aa6abc25c8ef6
 PKG_BUILD_DIR:=$(BUILD_DIR)/paramiko-$(PKG_VERSION)
 
 include $(INCLUDE_DIR)/package.mk
@@ -28,10 +27,10 @@ define Package/python3-paramiko
 endef
 
 define Package/python3-paramiko/description
-  This is a library for making SSH2 connections (client or server). 
-  Emphasis is on using SSH2 as an alternative to SSL for making 
-  secure connections between python scripts. All major ciphers and 
-  hash methods are supported. SFTP client and server mode are both 
+  This is a library for making SSH2 connections (client or server).
+  Emphasis is on using SSH2 as an alternative to SSL for making
+  secure connections between python scripts. All major ciphers and
+  hash methods are supported. SFTP client and server mode are both
   supported too.
 endef
 

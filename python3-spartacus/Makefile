@@ -8,17 +8,19 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=spartacus
-PKG_VERSION:=0.9
+PKG_VERSION:=0.13
 PKG_RELEASE:=1
-PKG_SOURCE_URL:=https://www.assembla.com/spaces/teletics/subversion-3/source/HEAD/trunk/dist/$(PKG_NAME)-$(PKG_VERSION).tar.gz
-PKG_MD5SUM:=831e948c7e19ac0a3a8d1c90f28ee50d
+PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tar.gz
+PKG_SOURCE_URL:=http://localhost:8000/
+#PKG_SOURCE_URL:=https://www.assembla.com/spaces/teletics/subversion-3/source/HEAD/trunk/dist/$(PKG_NAME)-$(PKG_VERSION).tar.gz
+PKG_MD5SUM:=96e6cdc23da46ab9599d1672d79f7a0e
 
 PKG_BUILD_DIR:=$(BUILD_DIR)/$(PKG_NAME)-$(PKG_VERSION)
 
 include $(INCLUDE_DIR)/package.mk
 $(call include_mk, python3-package.mk)
 
-define Package/python3-spartacus
+define Package/spartacus
   SUBMENU:=Python
   SECTION:=lang
   CATEGORY:=Languages
@@ -26,32 +28,23 @@ define Package/python3-spartacus
   DEPENDS:=+python3-paramiko +python3-pip +python3-tornado +libcurl +openssh-server +openssh-client +openssh-client-utils +openssh-keygen +openssh-sftp-server +openssh-sftp-client +sshtunnel +libssh2
 endef
 
-define Package/python3-spartacus/description
-
-endef
-
-define Host/Compile
-	$(call Build/Compile/Py3Mod,,install --prefix=/usr --root=$(PKG_INSTALL_DIR))
-endef
-
-define Host/Install
-	$(INSTALL_DIR) $(STAGING_DIR)$(PYTHON3_PKG_DIR)
-	$(CP) \
-		$(PKG_INSTALL_DIR)$(PYTHON3_PKG_DIR)/* \
-		$(STAGING_DIR)$(PYTHON3_PKG_DIR)
+define Package/spartacus/description
+	Rapid Prototyping Toolbox written in Python3
 endef
 
 define Build/Compile
-	$(call Build/Compile/Py3Mod,,install --prefix=/usr --root=$(PKG_INSTALL_DIR))
+
 endef
 
-define Package/python3-spartacus/install
-	$(INSTALL_DIR) $(1)$(PYTHON3_PKG_DIR)
-	$(CP) \
-		$(PKG_INSTALL_DIR)$(PYTHON3_PKG_DIR)/* \
-		$(1)$(PYTHON3_PKG_DIR)/
-	$(CP) $(PKG_INSTALL_DIR)/* $(1)/
+define Package/spartacus/install
+	$(INSTALL_DIR) $(1)/usr/lib/python3/
+	$(INSTALL_DIR) $(1)/usr/lib/python3/site-packages/
+	$(INSTALL_DIR) $(1)/usr/lib/python3/site-packages/Spartacus
+	$(INSTALL_DIR) $(1)/usr/bin/
+	$(CP) -r $(PKG_BUILD_DIR)/Spartacus/ $(1)/usr/lib/python3/site-packages/Spartacus/
+	$(INSTALL_BIN) $(PKG_BUILD_DIR)/Spartacus/Scripts/webserver.py $(1)/usr/bin/spartacus-web-server
+	$(INSTALL_BIN) $(PKG_BUILD_DIR)/Spartacus/Scripts/spartacusstop.py $(1)/usr/bin/spartacus-stop
+	$(INSTALL_BIN) $(PKG_BUILD_DIR)/Spartacus/Scripts/spartacusstart.py $(1)/usr/bin/spartacus-start
 endef
 
-$(eval $(call HostBuild))
-$(eval $(call BuildPackage,python3-spartacus))
+$(eval $(call BuildPackage,spartacus))

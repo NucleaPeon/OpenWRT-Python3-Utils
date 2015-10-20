@@ -8,12 +8,11 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=python3-click
-PKG_VERSION:=4.1
+PKG_VERSION:=5.1
 PKG_RELEASE:=1
 PKG_SOURCE:=click-$(PKG_VERSION).tar.gz
 PKG_SOURCE_URL:=https://pypi.python.org/packages/source/c/click/
-PKG_MD5SUM:=6a3fa88c738f2f775ec6de126feb99a4
-
+PKG_MD5SUM:=9c5323008cccfe232a8b161fc8196d41
 PKG_BUILD_DIR:=$(BUILD_DIR)/click-$(PKG_VERSION)
 
 include $(INCLUDE_DIR)/package.mk
