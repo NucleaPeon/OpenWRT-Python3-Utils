@@ -20,7 +20,7 @@ include $(INCLUDE_DIR)/package.mk
 $(call include_mk, python3-package.mk)
 
 define Package/python3-setuptools
-  SUBMENU:=Python
+  SUBMENU:=Python3
   SECTION:=lang
   CATEGORY:=Languages
   TITLE:=Tool for installing Python packages.

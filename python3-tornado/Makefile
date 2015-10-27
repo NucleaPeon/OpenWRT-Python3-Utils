@@ -25,17 +25,17 @@ $(call include_mk, python3-package.mk)
 define Package/python3-tornado
 	SECTION:=lang
 	CATEGORY:=Languages
-	SUBMENU:=Python
+	SUBMENU:=Python3
 	TITLE:=Tornado is an asynchronous Python web server
 	URL:=http://www.tornadoweb.org
 	DEPENDS:=+python3 +libcurl +ca-certificates
 endef
 
 define Package/python3-tornado/description
- Tornado is a Python web framework and asynchronous networking library, 
- originally developed at FriendFeed. By using non-blocking network I/O, 
- Tornado can scale to tens of thousands of open connections, making it 
- ideal for long polling, WebSockets, and other applications that require 
+ Tornado is a Python web framework and asynchronous networking library,
+ originally developed at FriendFeed. By using non-blocking network I/O,
+ Tornado can scale to tens of thousands of open connections, making it
+ ideal for long polling, WebSockets, and other applications that require
  a long-lived connection to each user.
 endef
 

@@ -21,7 +21,7 @@ include $(INCLUDE_DIR)/package.mk
 $(call include_mk, python3-package.mk)
 
 define Package/spartacus
-  SUBMENU:=Python
+  SUBMENU:=Python3
   SECTION:=lang
   CATEGORY:=Languages
   TITLE:=Python-side Rapid Application Development Toolkit

@@ -25,7 +25,7 @@ $(call include_mk, python3-package.mk)
 define Package/python3-bottle
 	SECTION:=lang
 	CATEGORY:=Languages
-	SUBMENU:=Python
+	SUBMENU:=Python3
 	TITLE:=Bottle is a fast, simple and lightweight WSGI micro web-framework for Python
 	URL:=http://bottlepy.org
 	DEPENDS:=+python3

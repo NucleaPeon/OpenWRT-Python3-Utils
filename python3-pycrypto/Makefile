@@ -20,7 +20,7 @@ include $(INCLUDE_DIR)/package.mk
 $(call include_mk, python3-package.mk)
 
 define Package/python3-pycrypto
-  SUBMENU:=Python
+  SUBMENU:=Python3
   SECTION:=lang
   CATEGORY:=Languages
   TITLE:=Cryptographic modules for Python.
@@ -28,13 +28,13 @@ define Package/python3-pycrypto
 endef
 
 define Package/python3-pycrypto/description
-  This is a collection of both secure hash functions 
-  (such as SHA256 and RIPEMD160), and various encryption 
-  algorithms (AES, DES, RSA, ElGamal, etc.). The package 
-  is structured to make adding new modules easy. 
-  This section is essentially complete, and the software 
-  interface will almost certainly not change in an 
-  incompatible way in the future; all that remains 
+  This is a collection of both secure hash functions
+  (such as SHA256 and RIPEMD160), and various encryption
+  algorithms (AES, DES, RSA, ElGamal, etc.). The package
+  is structured to make adding new modules easy.
+  This section is essentially complete, and the software
+  interface will almost certainly not change in an
+  incompatible way in the future; all that remains
   to be done is to fix any bugs that show up.
 endef
 

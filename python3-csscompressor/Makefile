@@ -20,7 +20,7 @@ include $(INCLUDE_DIR)/package.mk
 $(call include_mk, python3-package.mk)
 
 define Package/python3-csscompressor
-  SUBMENU:=Python
+  SUBMENU:=Python3
   SECTION:=lang
   CATEGORY:=Languages
   TITLE:=CSS Compressor Library for Python

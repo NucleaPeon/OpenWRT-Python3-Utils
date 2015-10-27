@@ -4,11 +4,11 @@
 #
 # This is free software, licensed under the MIT License
 # (ECDSA is MIT-licensed Software)
-# 
+#
 # Note: ECDSA is pure python software and has no install dependencies.
-# However, it depends on openssl for running tests, therefore it's 
+# However, it depends on openssl for running tests, therefore it's
 # recommended to install openssl in tandem with this package.
-# 
+#
 # If this is a requirement, openssl will be added to depends
 #
 
@@ -29,7 +29,7 @@ include $(INCLUDE_DIR)/package.mk
 $(call include_mk, python3-package.mk)
 
 define Package/python3-ecdsa
-  SUBMENU:=Python
+  SUBMENU:=Python3
   SECTION:=lang
   CATEGORY:=Languages
   TITLE:=ECDSA cryptographic signature library (pure python)
