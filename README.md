@@ -36,7 +36,8 @@ TODO: Double check all licenses to make sure no copy/paste errors
 ## How to Install:
 
 1. Add to your `openwrt/feeds.conf.default` file:
-   `src-git py3utils https://github.com/NucleaPeon/OpenWRT-Python3.4-Tornado.git`
+
+   `src-git py3utils https://github.com/NucleaPeon/OpenWRT-Python3-Utils.git`
 2. Update your feeds: `./scripts/feeds update -a` (or `./scripts/feeds update py3utils`)
 3. Install packages from your feeds (I've found this way works, but isn't necessarily recommended): `./scripts/feeds install -a`
 
