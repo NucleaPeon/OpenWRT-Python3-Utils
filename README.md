@@ -48,7 +48,7 @@ TODO: Double check all licenses to make sure no copy/paste errors
 **or**
 
 ### Install via Modules/Packages
-*. Enter `Languages --> Python -->` and select desired packages with the modular property `[M]`
+*. Enter `Languages --> Python3 -->` and select desired packages with the modular property `[M]`
 
 
 ## Host Dependencies:
