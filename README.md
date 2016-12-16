@@ -5,29 +5,31 @@ Fixed setuptools and pip issues as far as I know. Pip no longer errors out on se
 
 Package List in this Repository:
 
+ * [X] click
  * [X] csscompressor
+ * [X] docutils
  * [X] ecdsa
- * [ ] libsass (some c++ compilation issues with std::round atm)
+ * [ ] jinja2 >= 2.7
+ * [ ] libdns
+ * [ ] libsass >= 0.4 (some c++ compilation issues with std::round atm)
+ * [X] networkx 
  * [X] paramiko
+ * [X] passlib
  * [X] pip
  * [X] pycrypto
- * [X] setuptools
- * [X] tornado
  * [ ] pyramid
  * [ ] pyramid-debugtoolbar
  * [ ] pyramid_tm
  * [ ] pyramid_rpc
- * [X] waitress
- * [ ] sqlalchemy_utils
- * [X] passlib
- * [X] docutils
- * [X] click
- * [X] networkx
  * [X] PyYAML
+ * [ ] requests
+ * [X] setuptools
  * [ ] SQLAlchemy >= 0.9
+ * [ ] sqlalchemy_utils
+ * [X] tornado
+ * [X] waitress
  * [ ] zope.sqlalchemy >= 0.7
- * [ ] jinja2 >= 2.7
- * [ ] libsass >= 0.4
+ 
 
 TODO: Double check all licenses to make sure no copy/paste errors
 
