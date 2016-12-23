@@ -60,11 +60,13 @@ Attempting to install the python3-pycrytpo resulted in an error:
     /usr/include/features.h:398:23: fatal error: gnu/stubs.h: No such file or directory
     #include <gnu/stubs.h>
 
-This **may** be an issue with the package not bringing in the correct host build dependencies, but one solution I found was to install the `gcc-4.8-multilib` and `g++-4.8-multilib` packages. Compilation resumes as usual. If that doesn't work, go to:
+This **may** be an issue with the package not bringing in the correct host build dependencies, but one solution I found was to install the `gcc-4.8-multilib` and `g++-4.8-multilib` packages. Compilation resumes as usual. 
+
+If that doesn't work, go to:
 
     [*] Advanced Configuration options (for developers) --->
          [*] Toolchain Options --->
-         C Library implementation (Use (e)glibc --->
+         C Library implementation (Use (e)glibc) --->
              (X) Use (e)glibc
              
 Ensure that (e)glibc is selected instead of `( ) Use musl`.
