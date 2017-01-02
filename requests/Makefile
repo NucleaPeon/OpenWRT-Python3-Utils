@@ -10,20 +10,16 @@ PKG_NAME:=requests
 PKG_VERSION:=2.12.4
 PKG_RELEASE:=1
 
+PKG_SOURCE_PROTO:=git
+PKG_SOURCE_URL:=git://github.com/kennethreitz/requests.git
+PKG_SOURCE_SUBDIR:=$(PKG_NAME)-$(PKG_VERSION)
+PKG_SOURCE_VERSION:=8e0a532cad39e28dc6e74002f79513dbb509bad2
 PKG_LICENSE:=Apache 2.0
 PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tar.gz
-PKG_SOURCE_URL:=https://pypi.python.org/packages/source/r/requests/
-PKG_MD5SUM:=acdb48888a9d3c7309da12fc7f83fedb
 PKG_BUILD_DIR:=$(BUILD_DIR)/$(PKG_NAME)-$(PKG_VERSION)
 
 include $(INCLUDE_DIR)/package.mk
 $(call include_mk, python3-package.mk)
-
-
-PKG_SOURCE:=$(PKG_VERSION).tar.gz
-PKG_SOURCE_URL:=https://github.com/bottlepy/bottle/archive
-PKG_MD5SUM:=50a6ebada59391e8d01b2bd2ec52f05b
-PKG_BUILD_DIR:=$(BUILD_DIR)/bottle-$(PKG_VERSION)
 
 include $(INCLUDE_DIR)/package.mk
 $(call include_mk, python3-package.mk)
@@ -33,11 +29,13 @@ define Package/requests
 	CATEGORY:=Languages
 	SUBMENU:=Python3
 	TITLE:=Python HTTP for Humans.
-	URL:=http://bottlepy.org
-	DEPENDS:=+python3
+	URL:=http://docs.python-requests.org/en/master/
+	DEPENDS:=+python3 +python3-setuptools
 endef
 
-define Package/python3-bottle/description
+MAKE_FLAGS += prefix=/usr
+
+define Package/requests/description
  Requests is the only Non-GMO HTTP library for Python, safe for human 
  consumption. Warning: Recreational use of other HTTP libraries may 
  result in dangerous side-effects, including: security vulnerabilities, 
@@ -49,11 +47,15 @@ define Build/Configure
 endef
 
 define Build/Compile
+	python3 $(BUILD_DIR)/$(PKG_NAME)-$(PKG_VERSION)/setup.py install
 endef
 
 define Package/requests/install
 	$(INSTALL_DIR) $(1)$(PYTHON3_PKG_DIR)
-	$(CP) $(PKG_BUILD_DIR)/bottle.py $(1)$(PYTHON3_PKG_DIR)
+	$(CP) \
+		$(PKG_INSTALL_DIR)$(PYTHON3_PKG_DIR)/* \
+		$(1)$(PYTHON3_PKG_DIR)/
+	$(CP) $(PKG_INSTALL_DIR)/* $(1)/
 endef
 
-$(eval $(call BuildPackage,requestss))
+$(eval $(call BuildPackage,requests))
