@@ -50,22 +50,10 @@ define Build/Compile
 endef
 
 define Package/requests/install
-	echo $(1)
-	echo $(PYTHON3_PKG_DIR)
 	$(INSTALL_DIR) $(1)$(PYTHON3_PKG_DIR)
 	$(CP) \
 		$(PKG_INSTALL_DIR)$(PYTHON3_PKG_DIR)/* \
 		$(1)$(PYTHON3_PKG_DIR)
-# 	$(INSTALL_DIR) $(1)$(PYTHON3_PKG_DIR)
-# 	$(INSTALL_DIR) $(1)/usr
-# 	$(CP) \
-# 		$(PKG_INSTALL_DIR)$(PYTHON3_PKG_DIR)/* \
-# 		$(1)$(PYTHON3_PKG_DIR)/
-# 	$(CP) $(PKG_INSTALL_DIR)/usr/* $(1)/usr
-# 	$(CP) \
-# 		$(PKG_INSTALL_DIR)$(PYTHON3_PKG_DIR)/* \
-# 		$(1)$(PYTHON3_PKG_DIR)/
-# 	$(CP) $(PKG_INSTALL_DIR)/* $(1)/
 endef
 $(eval $(call PyPackage,requests))
 $(eval $(call BuildPackage,requests))
