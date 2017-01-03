@@ -7,6 +7,7 @@ Package List in this Repository:
 
  * [X] click
  * [X] csscompressor
+ * [X] dnslib
  * [X] docutils
  * [X] ecdsa
  * [ ] jinja2 >= 2.7
