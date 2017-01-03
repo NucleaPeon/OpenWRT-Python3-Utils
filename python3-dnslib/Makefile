@@ -11,8 +11,8 @@ PKG_VERSION:=0.9.6
 PKG_RELEASE:=1
 
 PKG_SOURCE_PROTO:=hg
-# PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tar.bz2
-# PKG_SOURCE_SUBDIR:=$(PKG_NAME)-$(PKG_VERSION)
+PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tar.bz2
+PKG_SOURCE_SUBDIR:=$(PKG_NAME)-$(PKG_VERSION)
 PKG_SOURCE_URL:=https://bitbucket.org/paulc/dnslib
 PKG_SOURCE_PROTO:=hg
 PKG_SOURCE_VERSION:=c6871d81b4f85c2028a2a2665633698e37321c40
@@ -25,7 +25,7 @@ define Package/dnslib
 	SECTION:=lang
 	CATEGORY:=Languages
 	SUBMENU:=Python3
-	TITLE:=A library to encode/decode DNS wire-format packets supporting both Python 2.7 and Python 3.2+.
+	TITLE:=A library to encode/decode DNS wire-format packets
 	URL:=https://bitbucket.org/paulc/dnslib
 	DEPENDS:=+python3
 endef
