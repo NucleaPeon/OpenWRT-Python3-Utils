@@ -1,8 +1,5 @@
 # OpenWRT-Python3-Utils
 
-Fixed setuptools and pip issues as far as I know. Pip no longer errors out on setuptools module missing, likely due to InstallDev section and proper python3 mk imports and variables.
-
-
 Package List in this Repository:
 
  * [X] click
@@ -32,6 +29,10 @@ Package List in this Repository:
  
 
 TODO: Double check all licenses to make sure no copy/paste errors
+
+## Update:
+
+Migrated to use main OpenWRT ``packages/`` feed. Software depends on python3 and setuptools instead of including them in this feed.
 
 ## How to Install:
 
