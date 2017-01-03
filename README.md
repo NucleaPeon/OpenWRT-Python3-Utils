@@ -22,8 +22,7 @@ Package List in this Repository:
  * [ ] pyramid_tm
  * [ ] pyramid_rpc
  * [X] PyYAML
- * [ ] requests
- * [X] setuptools
+ * [X] requests
  * [ ] SQLAlchemy >= 0.9
  * [ ] sqlalchemy_utils
  * [X] tornado
