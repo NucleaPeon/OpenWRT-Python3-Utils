@@ -18,11 +18,7 @@ PKG_LICENSE:=Apache 2.0
 PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tar.gz
 PKG_BUILD_DIR:=$(BUILD_DIR)/$(PKG_NAME)-$(PKG_VERSION)
 
-# PKG_BUILD_DEPENDS:=python3-setuptools/host
-# HOST_BUILD_DEPENDS:=python3-setuptools/host
-
-include $(INCLUDE_DIR)/package.mk
-$(call include_mk, python3-package.mk)
+PKG_BUILD_DEPENDS:=python3 python3-setuptools
 
 include $(INCLUDE_DIR)/package.mk
 $(call include_mk, python3-package.mk)
@@ -33,10 +29,8 @@ define Package/requests
 	SUBMENU:=Python3
 	TITLE:=Python HTTP for Humans.
 	URL:=http://docs.python-requests.org/en/master/
-	DEPENDS:=+python3 +python3-setuptools
+	DEPENDS:=+python3
 endef
-
-# MAKE_FLAGS += prefix=/usr
 
 define Package/requests/description
  Requests is the only Non-GMO HTTP library for Python, safe for human 
@@ -50,16 +44,28 @@ define Build/Configure
 endef
 
 define Build/Compile
-# 	python3 $(BUILD_DIR)/$(PKG_NAME)-$(PKG_VERSION)/setup.py install
-	$(call Build/Compile/PyMod,,install --prefix="/usr" --root="$(PKG_INSTALL_DIR)")
+	$(call Build/Compile/Py3Mod,., \
+		install --prefix="/usr" --root="$(PKG_INSTALL_DIR)", \
+	)
 endef
 
-# define Package/requests/install
+define Package/requests/install
+	echo $(1)
+	echo $(PYTHON3_PKG_DIR)
+	$(INSTALL_DIR) $(1)$(PYTHON3_PKG_DIR)
+	$(CP) \
+		$(PKG_INSTALL_DIR)$(PYTHON3_PKG_DIR)/* \
+		$(1)$(PYTHON3_PKG_DIR)
 # 	$(INSTALL_DIR) $(1)$(PYTHON3_PKG_DIR)
+# 	$(INSTALL_DIR) $(1)/usr
+# 	$(CP) \
+# 		$(PKG_INSTALL_DIR)$(PYTHON3_PKG_DIR)/* \
+# 		$(1)$(PYTHON3_PKG_DIR)/
+# 	$(CP) $(PKG_INSTALL_DIR)/usr/* $(1)/usr
 # 	$(CP) \
 # 		$(PKG_INSTALL_DIR)$(PYTHON3_PKG_DIR)/* \
 # 		$(1)$(PYTHON3_PKG_DIR)/
 # 	$(CP) $(PKG_INSTALL_DIR)/* $(1)/
-# endef
+endef
 $(eval $(call PyPackage,requests))
 $(eval $(call BuildPackage,requests))
